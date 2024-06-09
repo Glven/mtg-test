@@ -1,0 +1,108 @@
+*
+  margin: 0
+  padding: 0
+  box-sizing: border-box
+  outline: none
+html
+  font-family: 'Arial', sans-serif
+  font-display: swap
+.container
+  max-width: 1200px
+  width: 100%
+  margin: 0 auto
+.loading
+  text-align: center
+  font-size: 50px
+.header
+  &__wrapper
+    display: flex
+    justify-content: space-between
+    align-items: center
+  &__logo
+    max-width: 5rem
+    overflow: hidden
+    border-radius: 50%
+    img
+      width: 100%
+      object-fit: cover
+  &__watch
+    span
+      color: darkgreen
+      font-weight: 700
+      font-size: 30px
+      text-shadow: 2px 4px 2px rgba(#000, 0.5)
+  &-drop
+    position: relative
+    border: 1px solid #000
+    cursor: pointer
+    border-radius: 6px
+    transition: all 0.4s ease-in-out
+    &__selected
+      padding: 5px 10px
+    &__dropdown
+      position: absolute
+      top: 100%
+      left: -1px
+      z-index: 5
+      width: 106%
+      border-bottom-right-radius: 6px
+      border-bottom-left-radius: 6px
+      border: 1px solid #000
+      border-top: none
+      transform: translateY(-50%)
+      opacity: 0
+      display: none
+      transition: all 0.4s ease-in-out
+      transition-behavior: allow-discrete
+    &__item
+      text-align: center
+      padding: 5px 0
+    &--active
+      border-bottom-left-radius: 0
+      border-bottom-right-radius: 0
+      border-bottom: none
+      .header-drop__dropdown
+        transform: translateY(0)
+        opacity: 1
+        display: block
+        @starting-style
+          opacity: 0
+          transform: translateY(-50%)
+.reviews
+  padding-bottom: 3rem
+  &__wrapper
+    display: flex
+    flex-wrap: wrap
+    gap: 20px
+    margin-top: 50px
+  .review
+    flex-basis: calc(50% - 10px)
+    margin-bottom: 20px
+    box-shadow: 0 2px 4px rgba(#000, 0.5)
+    padding: 20px
+    border-radius: 12px
+    &-top
+      display: flex
+      justify-content: space-between
+      margin-bottom: 20px
+      &__name
+        font-weight: 700
+      &__date
+        font-size: 12px
+    &__text
+      line-height: 1.25
+.pagination
+  display: flex
+  justify-content: center
+  gap: 10px
+  &__item
+    width: 30px
+    height: 30px
+    font-size: 18px
+    border-radius: 50%
+    cursor: pointer
+    border: none
+    transition: all 0.4s ease-in-out
+    &--active
+      background: darkgreen
+      color: #fff
